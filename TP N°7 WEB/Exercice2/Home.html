@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice 2 </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Formulaire de Contact</h2>
+        
+        <form id="contactForm">
+            <div class="form-group">
+                <label>Nom :</label>
+                <input type="text" id="nom" name="nom">
+                <span class="error" id="errorNom">Le nom est obligatoire</span>
+            </div>
+            
+            <div class="form-group">
+                <label>Prénom :</label>
+                <input type="text" id="prenom" name="prenom">
+                <span class="error" id="errorPrenom">Le prénom est obligatoire</span>
+            </div>
+            
+            <div class="form-group">
+                <label>Email :</label>
+                <input type="email" id="email" name="email">
+                <span class="error" id="errorEmail">L'email est obligatoire</span>
+            </div>
+            <div class="form-group">
+                <label>Commentaire :</label>
+                <textarea id="commentaire" name="commentaire"></textarea>
+                <span class="error" id="errorCommentaire">Le commentaire ne doit pas dépasser 50 caractères</span>
+            </div>
+            
+            <button type="button" onclick="valider()">Envoyer</button>
+        </form>
+    </div>
+
+    <script src="exe.js"></script>
+</body>
+</html>
