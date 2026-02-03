@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résumé - Ingénierie de Bases de Données</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+            .page-break { page-break-before: always; }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        h2 {
+            color: #3498db;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            color: #e74c3c;
+            font-size: 18px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        h4 {
+            color: #16a085;
+            font-size: 16px;
+            margin-top: 15px;
+            margin-bottom: 8px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 14px;
+        }
+        
+        th {
+            background: #3498db;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        code {
+            background: #ecf0f1;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #c0392b;
+        }
+        
+        pre {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        .box {
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .keyword {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .button {
+            background: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        
+        .button:hover {
+            background: #2980b9;
+        }
+        
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #ecf0f1;
+            border-radius: 5px;
+        }
+        
+        hr {
+            border: none;
+            border-top: 2px solid #bdc3c7;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls no-print">
+        <button class="button" onclick="window.print()">📄 Télécharger en PDF</button>
+        <button class="button" onclick="window.print()">🖨️ Imprimer</button>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Résumé Complet - Ingénierie de Bases de Données</h1>
+            <p class="subtitle">Pr. Houda Benhar | Année universitaire 2023-2024</p>
+        </div>
+
+        <h2>📋 CHAPITRE 1 : LA MÉTHODE MERISE</h2>
+        
+        <h3>1.1 Introduction à Merise</h3>
+        <div class="box">
+            <p><span class="keyword">MERISE</span> = Méthode d'Études et de Réalisation Informatique pour les Systèmes d'Entreprise</p>
+            <ul>
+                <li>Créée dans les années 70 en France</li>
+                <li>Auteur principal: <strong>Hubert Tardieu</strong></li>
+                <li>Basée sur la <strong>séparation des données et des traitements</strong></li>
+                <li>Modélisation en plusieurs niveaux: conceptuel, logique et physique</li>
+            </ul>
+        </div>
+
+        <h3>1.2 Modèle Conceptuel de Données (MCD)</h3>
+        
+        <h4>Étapes d'élaboration du MCD:</h4>
+        <ol>
+            <li>Établir les <strong>règles de gestion</strong> métier</li>
+            <li>Créer le <strong>dictionnaire des données</strong></li>
+            <li>Élaborer le <strong>MCD</strong> (entités → associations → cardinalités)</li>
+        </ol>
+
+        <h4>Dictionnaire des Données</h4>
+        <table>
+            <tr>
+                <th>Élément</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Code mnémonique</td>
+                <td>Abréviation de la donnée</td>
+            </tr>
+            <tr>
+                <td>Désignation</td>
+                <td>Description complète</td>
+            </tr>
+            <tr>
+                <td>Type</td>
+                <td>A (Alphabétique), N (Numérique), AN (Alphanumérique), Date, Booléen</td>
+            </tr>
+            <tr>
+                <td>Taille</td>
+                <td>Nombre de caractères</td>
+            </tr>
+        </table>
+
+        <h4>Entité</h4>
+        <div class="box">
+            <p><strong>Définition:</strong> Objet du monde réel (Livre, Client, Commande...)</p>
+            <p><strong>Représentation:</strong> Rectangle contenant les propriétés</p>
+            <p><strong>Identifiant (clé):</strong> Propriété unique <u>soulignée</u></p>
+            <p><strong>Occurrence:</strong> Instance concrète d'une entité</p>
+        </div>
+
+        <h4>Contraintes d'une entité:</h4>
+        <ul>
+            <li><strong>C1:</strong> Au moins une propriété</li>
+            <li><strong>C2:</strong> Propriétés distinctes</li>
+            <li><strong>C3:</strong> Au moins un identifiant</li>
+            <li><strong>C4:</strong> Identifiant souligné</li>
+            <li><strong>C5:</strong> Propriétés monovaluées (une seule valeur)</li>
+            <li><strong>C6:</strong> Dépendance fonctionnelle avec l'identifiant</li>
+        </ul>
+
+        <div class="success">
+            <strong>Dépendance Fonctionnelle (DF): X → Y</strong>
+            <ul>
+                <li>X détermine Y</li>
+                <li>La connaissance de X implique une seule valeur de Y</li>
+            </ul>
+        </div>
+
+        <h4>Association</h4>
+        <table>
+            <tr>
+                <th>Caractéristique</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Définition</td>
+                <td>Lien sémantique entre entités</td>
+            </tr>
+            <tr>
+                <td>Représentation</td>
+                <td>Ellipse</td>
+            </tr>
+            <tr>
+                <td>Nommage</td>
+                <td>Verbe à l'infinitif (Écrire, Contenir, Acheter...)</td>
+            </tr>
+            <tr>
+                <td>Association porteuse</td>
+                <td>Contient des propriétés</td>
+            </tr>
+        </table>
+
+        <h4>Types d'associations:</h4>
+        <ul>
+            <li><strong>Binaire:</strong> Entre 2 entités</li>
+            <li><strong>Réflexive (unaire):</strong> Une entité liée à elle-même</li>
+            <li><strong>Ternaire:</strong> Entre 3 entités</li>
+            <li><strong>N-aire:</strong> Entre n entités (n≥3)</li>
+        </ul>
+
+        <h4>Cardinalités</h4>
+        <div class="box">
+            <p>Format: <strong>(min, max)</strong> où min ∈ {0,1} et max ∈ {1,n}</p>
+            <p><strong>Cardinalités courantes:</strong> 0,1 | 0,n | 1,1 | 1,n</p>
+        </div>
+
+        <h4>Types d'associations selon cardinalités:</h4>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Condition</th>
+            </tr>
+            <tr>
+                <td><strong>1:1</strong> (un à un)</td>
+                <td>Aucune cardinalité max = n</td>
+            </tr>
+            <tr>
+                <td><strong>1:n</strong> (un à plusieurs)</td>
+                <td>Une cardinalité max = n</td>
+            </tr>
+            <tr>
+                <td><strong>n:m</strong> (plusieurs à plusieurs)</td>
+                <td>Deux cardinalités max = n</td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <h3>1.3 Modèle Logique de Données Relationnel (MLDR)</h3>
+
+        <h4>Notation:</h4>
+        <div class="box">
+            <p><strong>Clé primaire:</strong> <u>Soulignée</u></p>
+            <p><strong>Clé étrangère:</strong> Précédée de #</p>
+            <p><strong>Exemple:</strong></p>
+            <code>CLIENT(<u>numClt</u>, nomClt)</code><br>
+            <code>COMMANDE(<u>numCom</u>, dateCom, #numClt)</code>
+        </div>
+
+        <h4>Règles de transformation MCD → MLD:</h4>
+
+        <div class="success">
+            <strong>RÈGLE 1: Entité → Table</strong>
+            <ul>
+                <li>Identifiant → Clé primaire</li>
+                <li>Propriétés → Colonnes</li>
+            </ul>
+        </div>
+
+        <div class="success">
+            <strong>RÈGLE 2: Association 1:n → Clé étrangère</strong>
+            <ul>
+                <li>La clé étrangère est ajoutée dans la table côté 0,1 ou 1,1 (fils)</li>
+                <li>Elle référence la clé primaire de la table père</li>
+            </ul>
+        </div>
+
+        <div class="success">
+            <strong>RÈGLE 3: Association n:m → Table de jonction</strong>
+            <ul>
+                <li>Nouvelle table avec clé primaire composée</li>
+                <li>Clé primaire = {clé1, clé2} (clés étrangères)</li>
+                <li>Les propriétés de l'association deviennent colonnes</li>
+            </ul>
+        </div>
+
+        <div class="success">
+            <strong>RÈGLE 4: Association n-aire → Table</strong>
+            <ul>
+                <li>Une table avec n clés étrangères</li>
+                <li>Clé primaire composée de ces n clés</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>🗄️ CHAPITRE 2 : SGBD RELATIONNELLES</h2>
+
+        <h3>2.1 Introduction aux Bases de Données</h3>
+        <div class="box">
+            <p><strong>Base de données:</strong> Collection organisée de données structurées permettant:</p>
+            <ul>
+                <li>Stockage efficace</li>
+                <li>Gestion centralisée</li>
+                <li>Recherche rapide</li>
+                <li>Récupération facile</li>
+            </ul>
+        </div>
+
+        <h4>Problèmes des fichiers classiques:</h4>
+        <ul>
+            <li>❌ Redondance des données</li>
+            <li>❌ Problèmes d'intégrité</li>
+            <li>❌ Difficultés d'accès</li>
+            <li>❌ Problèmes de concurrence</li>
+            <li>❌ Manque de sécurité</li>
+        </ul>
+
+        <h3>2.2 Vocabulaire</h3>
+        <table>
+            <tr>
+                <th>Terme relationnel</th>
+                <th>Synonymes</th>
+            </tr>
+            <tr>
+                <td><strong>Table</strong></td>
+                <td>Relation</td>
+            </tr>
+            <tr>
+                <td><strong>Ligne</strong></td>
+                <td>Tuple, enregistrement, occurrence, instance</td>
+            </tr>
+            <tr>
+                <td><strong>Colonne</strong></td>
+                <td>Attribut, champ, propriété</td>
+            </tr>
+        </table>
+
+        <h3>2.3 SGBD (Système de Gestion de Base de Données)</h3>
+        <div class="box">
+            <p><strong>Définition:</strong> Logiciel permettant de manipuler les données (créer, lire, modifier, supprimer)</p>
+        </div>
+
+        <h4>Avantages:</h4>
+        <ol>
+            <li>✅ Gestion des concurrences</li>
+            <li>✅ Efficacité d'accès aux données</li>
+            <li>✅ Temps de réponse réduit</li>
+            <li>✅ Contrôle de la redondance</li>
+            <li>✅ Cohérence des données (contraintes d'intégrité)</li>
+            <li>✅ Protection contre les pannes</li>
+            <li>✅ Sécurité (accès non autorisés)</li>
+            <li>✅ Vue abstraite des données</li>
+            <li>✅ Gestion de requêtes complexes</li>
+        </ol>
+
+        <h3>2.4 Principaux SGBD</h3>
+        <table>
+            <tr>
+                <th>SGBD</th>
+                <th>Avantages</th>
+                <th>Inconvénients</th>
+            </tr>
+            <tr>
+                <td><strong>MySQL</strong></td>
+                <td>Open source, performant, simple</td>
+                <td>Moins rigoureux sur syntaxe SQL</td>
+            </tr>
+            <tr>
+                <td><strong>PostgreSQL</strong></td>
+                <td>Open source, conforme SQL, robuste</td>
+                <td>Performances légèrement inférieures</td>
+            </tr>
+            <tr>
+                <td><strong>SQLite</strong></td>
+                <td>Embarqué, léger, aucune configuration</td>
+                <td>Limité en concurrence intensive</td>
+            </tr>
+            <tr>
+                <td><strong>SQL Server</strong></td>
+                <td>Puissant et polyvalent</td>
+                <td>Coût élevé, moins compatible multi-OS</td>
+            </tr>
+            <tr>
+                <td><strong>Oracle</strong></td>
+                <td>Le plus puissant, hautement sécurisé</td>
+                <td>Coût élevé, complexité de gestion</td>
+            </tr>
+        </table>
+
+        <div class="page-break"></div>
+
+        <h3>2.5 Oracle Database - Historique</h3>
+        <ul>
+            <li><strong>1977:</strong> Creation Software Development Laboratories (Larry Ellison)</li>
+            <li><strong>1979:</strong> Oracle V2 (SQL basique)</li>
+            <li><strong>1983:</strong> Oracle Corporation - Version 3 (transactions)</li>
+            <li><strong>1988:</strong> Version 6 (PL/SQL)</li>
+            <li><strong>2007:</strong> Version 11g</li>
+            <li><strong>2010:</strong> Acquisition Sun Microsystems (Java, MySQL)</li>
+            <li><strong>2019:</strong> Version 19c</li>
+            <li><strong>2023:</strong> Oracle Database 23c</li>
+        </ul>
+
+        <h3>2.6 Configuration Oracle</h3>
+        <pre>-- Connexion administrateur
+connect /as sysdba
+
+-- Créer utilisateur
+CREATE USER nom_utilisateur IDENTIFIED BY mot_de_passe;
+
+-- Attribuer privilèges
+GRANT CONNECT, RESOURCE TO nom_utilisateur;
+
+-- Connexion utilisateur
+conn nom_utilisateur/mot_de_passe;</pre>
+
+        <hr>
+
+        <h2>💻 CHAPITRE 3 : SQL-LDD (Langage de Définition de Données)</h2>
+
+        <h3>3.1 Les 5 sous-ensembles SQL</h3>
+        <table>
+            <tr>
+                <th>Sous-ensemble</th>
+                <th>Commandes</th>
+                <th>Usage</th>
+            </tr>
+            <tr>
+                <td><strong>DDL</strong></td>
+                <td>CREATE, ALTER, DROP, RENAME, TRUNCATE</td>
+                <td>Définition structure BD</td>
+            </tr>
+            <tr>
+                <td><strong>DML</strong></td>
+                <td>INSERT, UPDATE, DELETE, MERGE</td>
+                <td>Manipulation données</td>
+            </tr>
+            <tr>
+                <td><strong>DQL</strong></td>
+                <td>SELECT</td>
+                <td>Interrogation BD</td>
+            </tr>
+            <tr>
+                <td><strong>DCL</strong></td>
+                <td>GRANT, REVOKE</td>
+                <td>Gestion droits</td>
+            </tr>
+            <tr>
+                <td><strong>TCL</strong></td>
+                <td>COMMIT, ROLLBACK, SAVEPOINT</td>
+                <td>Gestion transactions</td>
+            </tr>
+        </table>
+
+        <h3>3.2 Types de Données SQL</h3>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Description</th>
+                <th>Exemple</th>
+            </tr>
+            <tr>
+                <td><strong>INT / INTEGER</strong></td>
+                <td>Entier</td>
+                <td>42</td>
+            </tr>
+            <tr>
+                <td><strong>SMALLINT</strong></td>
+                <td>Entier court</td>
+                <td>100</td>
+            </tr>
+            <tr>
+                <td><strong>BIGINT</strong></td>
+                <td>Entier long</td>
+                <td>999999999</td>
+            </tr>
+            <tr>
+                <td><strong>DECIMAL(p,s)</strong></td>
+                <td>Nombre décimal précis</td>
+                <td>DECIMAL(10,2)</td>
+            </tr>
+            <tr>
+                <td><strong>CHAR(n)</strong></td>
+                <td>Chaîne fixe</td>
+                <td>CHAR(10)</td>
+            </tr>
+            <tr>
+                <td><strong>VARCHAR(n)</strong></td>
+                <td>Chaîne variable</td>
+                <td>VARCHAR(50)</td>
+            </tr>
+            <tr>
+                <td><strong>VARCHAR2(n)</strong></td>
+                <td>Chaîne variable Oracle</td>
+                <td>VARCHAR2(100)</td>
+            </tr>
+            <tr>
+                <td><strong>DATE</strong></td>
+                <td>Date</td>
+                <td>'YYYY-MM-DD'</td>
+            </tr>
+            <tr>
+                <td><strong>BOOLEAN</strong></td>
+                <td>Booléen</td>
+                <td>TRUE/FALSE</td>
+            </tr>
+            <tr>
+                <td><strong>CLOB</strong></td>
+                <td>Texte volumineux</td>
+                <td>Documents</td>
+            </tr>
+            <tr>
+                <td><strong>BLOB</strong></td>
+                <td>Données binaires</td>
+                <td>Images</td>
+            </tr>
+        </table>
+
+        <h3>3.3 Conventions de Nommage</h3>
+        <div class="warning">
+            <strong>Règles pour les noms:</strong>
+            <ul>
+                <li>✓ Commencer par une lettre</li>
+                <li>✓ 1 à 30 caractères</li>
+                <li>✓ Caractères autorisés: A-Z, a-z, 0-9, _, $, #</li>
+                <li>✗ Pas de doublon pour le même utilisateur</li>
+                <li>✗ Éviter mots réservés: SELECT, FROM, WHERE, CREATE, DROP, TABLE, etc.</li>
+            </ul>
+        </div>
+
+        <div class="page-break"></div>
+
+        <h3>3.4 CREATE TABLE</h3>
+        <pre>CREATE TABLE nom_table (
+    colonne1 type1 [DEFAULT expr],
+    colonne2 type2,
+    ...
+    colonneN typeN
+);
+
+-- Exemple
+CREATE TABLE etudiant (
+    cne NUMBER(2),
+    ename VARCHAR2(14)
+);
+
+-- Créer table depuis requête
+CREATE TABLE student_copy AS
+SELECT * FROM student;</pre>
+
+        <h3>3.5 ALTER TABLE</h3>
+        <pre>-- Ajouter une colonne
+ALTER TABLE table ADD (colonne type [DEFAULT expr]);
+
+-- Modifier une colonne
+ALTER TABLE table MODIFY (colonne type [DEFAULT expr]);
+
+-- Supprimer une colonne
+ALTER TABLE table DROP COLUMN nom_colonne;
+
+-- Exemples
+ALTER TABLE student ADD (address VARCHAR2(50));
+ALTER TABLE student MODIFY (address VARCHAR2(60));
+ALTER TABLE student DROP COLUMN address;</pre>
+
+        <h3>3.6 DROP TABLE</h3>
+        <pre>DROP TABLE nom_table;</pre>
+        <div class="warning">
+            ⚠️ <strong>Irréversible:</strong> Supprime données + structure + libère espace
+        </div>
+
+        <h3>3.7 RENAME</h3>
+        <pre>RENAME ancien_nom TO nouveau_nom;
+
+-- Exemple
+RENAME student TO etudiant;</pre>
+
+        <h3>3.8 TRUNCATE TABLE</h3>
+        <pre>TRUNCATE TABLE nom_table;</pre>
+        <div class="warning">
+            <strong>Caractéristiques:</strong>
+            <ul>
+                <li>Supprime toutes les lignes</li>
+                <li>Libère l'espace de stockage</li>
+                <li>⚠️ Non annulable (pas de ROLLBACK)</li>
+            </ul>
+        </div>
+
+        <h3>3.9 Les Contraintes</h3>
+
+        <h4>PRIMARY KEY (Clé Primaire)</h4>
+        <div class="box">
+            <ul>
+                <li>Identifie uniquement chaque ligne</li>
+                <li>Une seule par table</li>
+                <li>Pas de valeur NULL</li>
+                <li>Pas de doublons</li>
+            </ul>
+        </div>
+        <pre>CREATE TABLE dept (
+    deptno NUMBER(2),
+    dname VARCHAR2(14),
+    loc VARCHAR2(13),
+    CONSTRAINT dept_deptno_pk PRIMARY KEY(deptno)
+);</pre>
+
+        <h4>FOREIGN KEY (Clé Étrangère)</h4>
+        <div class="box">
+            <ul>
+                <li>Référence la clé primaire d'une autre table</li>
+                <li>Maintient l'intégrité référentielle</li>
+            </ul>
+        </div>
+        <pre>CREATE TABLE emp (
+    empno NUMBER(4),
+    ename VARCHAR2(10) NOT NULL,
+    deptno NUMBER(2) NOT NULL,
+    CONSTRAINT emp_deptno_fk FOREIGN KEY (deptno)
+    REFERENCES dept (deptno)
+);</pre>
+
+        <h4>NOT NULL</h4>
+        <div class="box">
+            <ul>
+                <li>Interdit les valeurs NULL</li>
+                <li>Définie uniquement au niveau colonne</li>
+            </ul>
+        </div>
+        <pre>CREATE TABLE emp (
+    empno NUMBER(4),
+    ename VARCHAR2(10) NOT NULL,
+    deptno NUMBER(2) NOT NULL
+);</pre>
+
+        <h4>UNIQUE</h4>
+        <div class="box">
+            <ul>
+                <li>Interdit les doublons</li>
+                <li>Autorise NULL (sauf si NOT NULL aussi)</li>
+            </ul>
+        </div>
+        <pre>CREATE TABLE dept (
+    deptno NUMBER(2),
+    dname VARCHAR2(14),
+    CONSTRAINT dept_dname_uk UNIQUE(dname)
+);</pre>
+
+        <h4>CHECK</h4>
+        <div class="box">
+            <ul>
+                <li>Définit une condition à vérifier</li>
+                <li>Expressions interdites: CURRVAL, NEXTVAL, LEVEL, ROWNUM, SYSDATE, UID, USER</li>
+            </ul>
+        </div>
+        <pre>CREATE TABLE emp (
+    deptno NUMBER(2),
+    CONSTRAINT emp_deptno_ck CHECK (DEPTNO BETWEEN 10 AND 99)
+);</pre>
+
+        <div class="page-break"></div>
+
+        <h3>3.10 Gestion des Contraintes</h3>
+
+        <h4>Ajouter une contrainte</h4>
+        <pre>ALTER TABLE table ADD [CONSTRAINT nom] type (colonne);</pre>
+
+        <h4>Supprimer une contrainte</h4>
+        <pre>ALTER TABLE table DROP CONSTRAINT nom_contrainte;
+
+-- Avec dépendances
+ALTER TABLE dept DROP PRIMARY KEY CASCADE;</pre>
+
+        <h4>Désactiver une contrainte</h4>
+        <pre>ALTER TABLE table DISABLE CONSTRAINT nom_contrainte [CASCADE];</pre>
+
+        <h4>Activer une contrainte</h4>
+        <pre>ALTER TABLE table ENABLE CONSTRAINT nom_contrainte;</pre>
+
+        <h3>3.11 Vérification des Contraintes</h3>
+        <pre>-- Voir toutes les contraintes
+SELECT constraint_name, constraint_type, search_condition
+FROM user_constraints
+WHERE table_name = 'NOM_TABLE';
+
+-- Voir colonnes associées
+SELECT constraint_name, column_name
+FROM user_cons_columns
+WHERE table_name = 'NOM_TABLE';</pre>
+
+        <div class="box">
+            <strong>Types de contraintes:</strong>
+            <ul>
+                <li><strong>P</strong> = PRIMARY KEY</li>
+                <li><strong>R</strong> = FOREIGN KEY</li>
+                <li><strong>U</strong> = UNIQUE</li>
+                <li><strong>C</strong> = CHECK ou NOT NULL</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>🎯 SYNTHÈSE : MOTS-CLÉS ESSENTIELS</h2>
+
+        <h3>Modélisation</h3>
+        <div class="success">
+            <strong>Merise</strong>, MCD, MLD, Entité, Association, Cardinalité, 
+            <strong>Dépendance fonctionnelle</strong> (X → Y), 
+            <strong>Identifiant</strong>, Clé primaire, Clé étrangère, 
+            Occurrence, Propriété, Attribut
+        </div>
+
+        <h3>SGBD</h3>
+        <div class="success">
+            <strong>SGBD</strong>, Base de données, Relation, Table, 
+            <strong>Tuple</strong>, Enregistrement, Ligne, 
+            <strong>Attribut</strong>, Colonne, Champ, 
+            Intégrité, Concurrence, Cohérence, Redondance
+        </div>
+
+        <h3>SQL-LDD</h3>
+        <div class="success">
+            <strong>DDL</strong> (Data Definition Language), 
+            <strong>CREATE</strong>, ALTER, DROP, RENAME, TRUNCATE, 
+            <strong>Contraintes</strong>: PRIMARY KEY, FOREIGN KEY, UNIQUE, NOT NULL, CHECK, 
+            <strong>Types</strong>: INT, VARCHAR2, CHAR, DATE, NUMBER, DECIMAL, CLOB, BLOB
+        </div>
+
+        <h3>Règles de Transformation</h3>
+        <div class="success">
+            <ul>
+                <li><strong>Règle 1:</strong> Entité → Table</li>
+                <li><strong>Règle 2:</strong> Association 1:n → Clé étrangère</li>
+                <li><strong>Règle 3:</strong> Association n:m → Table de jonction</li>
+                <li><strong>Règle 4:</strong> Association n-aire → Table avec n clés</li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2>✅ CONSEILS POUR L'EXAMEN</h2>
+
+        <h3>À Maîtriser Absolument:</h3>
+        <div class="success">
+            <ul>
+                <li>✓ Transformation MCD → MLD (les 4 règles)</li>
+                <li>✓ Création de tables avec toutes les contraintes</li>
+                <li>✓ Lecture et interprétation des cardinalités</li>
+                <li>✓ Tous les types de données SQL</li>
+                <li>✓ Syntaxe exacte: CREATE, ALTER, DROP</li>
+                <li>✓ Différence entre DELETE, DROP et TRUNCATE</li>
+                <li>✓ Gestion des contraintes (ajouter, supprimer, activer, désactiver)</li>
+            </ul>
+        </div>
+
+        <h3>Points d'Attention:</h3>
+        <div class="warning">
+            <ul>
+                <li>⚠️ Bien souligner les clés primaires</li>
+                <li>⚠️ Préfixer # pour les clés étrangères dans le MLD</li>
+                <li>⚠️ Respecter les règles de nommage (pas d'espace, commence par lettre)</li>
+                <li>⚠️ NOT NULL ≠ CHECK (NOT NULL au niveau colonne uniquement)</li>
+                <li>⚠️ Savoir quand créer une table de jonction (association n:m)</li>
+                <li>⚠️ Une table = une seule PRIMARY KEY</li>
+                <li>⚠️ TRUNCATE est irréversible (pas de ROLLBACK)</li>
+            </ul>
+        </div>
+
+        <h3>Exercices Types à Préparer:</h3>
+        <div class="box">
+            <ol>
+                <li>📝 <strong>Créer un MCD</strong> à partir de règles de gestion
+                    <ul>
+                        <li>Identifier les entités</li>
+                        <li>Définir les associations</li>
+                        <li>Placer les cardinalités correctement</li>
+                    </ul>
+                </li>
+                <li>📝 <strong>Transformer un MCD en MLD</strong>
+                    <ul>
+                        <li>Appliquer les 4 règles</li>
+                        <li>Identifier les clés primaires et étrangères</li>
+                        <li>Notation correcte (souligné et #)</li>
+                    </ul>
+                </li>
+                <li>📝 <strong>Écrire les commandes SQL CREATE TABLE</strong>
+                    <ul>
+                        <li>Avec toutes les contraintes</li>
+                        <li>Types de données appropriés</li>
+                        <li>Nommage des contraintes</li>
+                    </ul>
+                </li>
+                <li>📝 <strong>Modifier une structure de table</strong>
+                    <ul>
+                        <li>Ajouter/modifier/supprimer des colonnes</li>
+                        <li>Ajouter/supprimer des contraintes</li>
+                        <li>Activer/désactiver des contraintes</li>
+                    </ul>
+                </li>
+                <li>📝 <strong>Analyser des contraintes existantes</strong>
+                    <ul>
+                        <li>Interroger user_constraints</li>
+                        <li>Interroger user_cons_columns</li>
+                        <li>Interpréter les types de contraintes (P, R, U, C)</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Checklist de Révision:</h3>
+        <table>
+            <tr>
+                <th>Concept</th>
+                <th>À réviser</th>
+            </tr>
+            <tr>
+                <td>Méthode Merise</td>
+                <td>✓ Histoire, principe de séparation données/traitements</td>
+            </tr>
+            <tr>
+                <td>MCD</td>
+                <td>✓ Entité, association, cardinalité, DF, règles C1-C6</td>
+            </tr>
+            <tr>
+                <td>MLD</td>
+                <td>✓ 4 règles de transformation, notation clés</td>
+            </tr>
+            <tr>
+                <td>SGBD</td>
+                <td>✓ Définition, avantages, principaux SGBD</td>
+            </tr>
+            <tr>
+                <td>Oracle</td>
+                <td>✓ Historique, configuration, outils (SQL*Plus, SQL Developer)</td>
+            </tr>
+            <tr>
+                <td>SQL-LDD</td>
+                <td>✓ 5 sous-ensembles, types de données, commandes DDL</td>
+            </tr>
+            <tr>
+                <td>CREATE TABLE</td>
+                <td>✓ Syntaxe complète, types, DEFAULT, AS subquery</td>
+            </tr>
+            <tr>
+                <td>ALTER TABLE</td>
+                <td>✓ ADD, MODIFY, DROP COLUMN</td>
+            </tr>
+            <tr>
+                <td>Contraintes</td>
+                <td>✓ PK, FK, UNIQUE, NOT NULL, CHECK, niveau colonne/table</td>
+            </tr>
+            <tr>
+                <td>Gestion contraintes</td>
+                <td>✓ ADD, DROP, ENABLE, DISABLE, CASCADE</td>
+            </tr>
+        </table>
+
+        <hr>
+
+        <h2>📊 TABLEAUX DE RÉFÉRENCE RAPIDE</h2>
+
+        <h3>Commandes DDL Essentielles</h3>
+        <table>
+            <tr>
+                <th>Commande</th>
+                <th>Fonction</th>
+                <th>Réversible?</th>
+            </tr>
+            <tr>
+                <td><code>CREATE TABLE</code></td>
+                <td>Créer une table</td>
+                <td>Oui (DROP)</td>
+            </tr>
+            <tr>
+                <td><code>ALTER TABLE</code></td>
+                <td>Modifier structure table</td>
+                <td>Oui</td>
+            </tr>
+            <tr>
+                <td><code>DROP TABLE</code></td>
+                <td>Supprimer table complète</td>
+                <td>Non ⚠️</td>
+            </tr>
+            <tr>
+                <td><code>TRUNCATE TABLE</code></td>
+                <td>Supprimer toutes lignes</td>
+                <td>Non ⚠️</td>
+            </tr>
+            <tr>
+                <td><code>RENAME</code></td>
+                <td>Renommer table</td>
+                <td>Oui</td>
+            </tr>
+        </table>
+
+        <h3>Cardinalités et Signification</h3>
+        <table>
+            <tr>
+                <th>Cardinalité</th>
+                <th>Signification</th>
+                <th>Exemple</th>
+            </tr>
+            <tr>
+                <td><strong>0,1</strong></td>
+                <td>Au plus une fois (optionnel)</td>
+                <td>Un employé peut avoir 0 ou 1 bureau</td>
+            </tr>
+            <tr>
+                <td><strong>1,1</strong></td>
+                <td>Exactement une fois (obligatoire)</td>
+                <td>Une commande a obligatoirement 1 client</td>
+            </tr>
+            <tr>
+                <td><strong>0,n</strong></td>
+                <td>Zéro ou plusieurs (optionnel multiple)</td>
+                <td>Un client peut avoir 0 ou plusieurs commandes</td>
+            </tr>
+            <tr>
+                <td><strong>1,n</strong></td>
+                <td>Au moins une fois (obligatoire multiple)</td>
+                <td>Une commande contient au moins 1 produit</td>
+            </tr>
+        </table>
+
+        <h3>Contraintes d'Intégrité</h3>
+        <table>
+            <tr>
+                <th>Contrainte</th>
+                <th>Niveau</th>
+                <th>Fonction</th>
+            </tr>
+            <tr>
+                <td><strong>PRIMARY KEY</strong></td>
+                <td>Colonne ou Table</td>
+                <td>Identifiant unique, NOT NULL</td>
+            </tr>
+            <tr>
+                <td><strong>FOREIGN KEY</strong></td>
+                <td>Colonne ou Table</td>
+                <td>Référence vers PK autre table</td>
+            </tr>
+            <tr>
+                <td><strong>UNIQUE</strong></td>
+                <td>Colonne ou Table</td>
+                <td>Pas de doublons (NULL autorisé)</td>
+            </tr>
+            <tr>
+                <td><strong>NOT NULL</strong></td>
+                <td>Colonne uniquement</td>
+                <td>Valeur obligatoire</td>
+            </tr>
+            <tr>
+                <td><strong>CHECK</strong></td>
+                <td>Colonne ou Table</td>
+                <td>Condition personnalisée</td>
+            </tr>
+        </table>
+
+        <h3>Exemples Complets de Création de Tables</h3>
+
+        <h4>Exemple 1: Table simple avec contraintes</h4>
+        <pre>CREATE TABLE client (
+    id_client NUMBER(5) PRIMARY KEY,
+    nom VARCHAR2(50) NOT NULL,
+    prenom VARCHAR2(50) NOT NULL,
+    email VARCHAR2(100) UNIQUE,
+    telephone VARCHAR2(15),
+    date_inscription DATE DEFAULT SYSDATE
+);</pre>
+
+        <h4>Exemple 2: Table avec clé étrangère</h4>
+        <pre>CREATE TABLE commande (
+    num_commande NUMBER(8),
+    date_commande DATE NOT NULL,
+    montant_total DECIMAL(10,2) CHECK (montant_total >= 0),
+    id_client NUMBER(5) NOT NULL,
+    CONSTRAINT pk_commande PRIMARY KEY (num_commande),
+    CONSTRAINT fk_client FOREIGN KEY (id_client)
+        REFERENCES client(id_client)
+);</pre>
+
+        <h4>Exemple 3: Table de jonction (n:m)</h4>
+        <pre>CREATE TABLE ligne_commande (
+    num_commande NUMBER(8),
+    code_produit VARCHAR2(10),
+    quantite NUMBER(4) CHECK (quantite > 0),
+    prix_unitaire DECIMAL(8,2) NOT NULL,
+    CONSTRAINT pk_ligne PRIMARY KEY (num_commande, code_produit),
+    CONSTRAINT fk_commande FOREIGN KEY (num_commande)
+        REFERENCES commande(num_commande),
+    CONSTRAINT fk_produit FOREIGN KEY (code_produit)
+        REFERENCES produit(code_produit)
+);</pre>
+
+        <hr>
+
+        <h2>🎓 EXERCICE FINAL DE RÉVISION</h2>
+
+        <div class="box">
+            <h3>Énoncé: Système de Gestion d'une Bibliothèque</h3>
+            <p><strong>Règles de gestion:</strong></p>
+            <ol>
+                <li>Un livre est caractérisé par un ISBN (unique), un titre, une année de parution et un nombre d'exemplaires disponibles.</li>
+                <li>Un livre peut être écrit par un ou plusieurs auteurs.</li>
+                <li>Un auteur (identifié par un code) a un nom, un prénom et une nationalité. Il peut écrire plusieurs livres.</li>
+                <li>Un adhérent est identifié par un numéro, et on enregistre son nom, prénom, adresse et téléphone.</li>
+                <li>Un adhérent peut emprunter plusieurs livres.</li>
+                <li>Pour chaque emprunt, on enregistre la date d'emprunt, la date de retour prévue et la date de retour effective (peut être NULL si non encore rendu).</li>
+            </ol>
+
+            <h4>Travail à faire:</h4>
+            <ol>
+                <li>Établir le MCD avec entités, associations et cardinalités</li>
+                <li>Transformer le MCD en MLD</li>
+                <li>Écrire les commandes CREATE TABLE avec toutes les contraintes</li>
+            </ol>
+        </div>
+
+        <div class="success">
+            <h4>Solution MLD:</h4>
+            <pre>LIVRE (<u>ISBN</u>, titre, annee_parution, nb_exemplaires)
+AUTEUR (<u>code_auteur</u>, nom, prenom, nationalite)
+ADHERENT (<u>num_adherent</u>, nom, prenom, adresse, telephone)
+ECRIRE (#ISBN, #code_auteur)
+EMPRUNTER (#num_adherent, #ISBN, date_emprunt, date_retour_prevue, date_retour_effective)</pre>
+
+            <h4>Solution SQL (exemple):</h4>
+            <pre>CREATE TABLE livre (
+    ISBN VARCHAR2(13),
+    titre VARCHAR2(100) NOT NULL,
+    annee_parution NUMBER(4),
+    nb_exemplaires NUMBER(3) DEFAULT 1 CHECK (nb_exemplaires >= 0),
+    CONSTRAINT pk_livre PRIMARY KEY (ISBN)
+);
+
+CREATE TABLE auteur (
+    code_auteur NUMBER(5),
+    nom VARCHAR2(50) NOT NULL,
+    prenom VARCHAR2(50) NOT NULL,
+    nationalite VARCHAR2(50),
+    CONSTRAINT pk_auteur PRIMARY KEY (code_auteur)
+);
+
+CREATE TABLE adherent (
+    num_adherent NUMBER(6),
+    nom VARCHAR2(50) NOT NULL,
+    prenom VARCHAR2(50) NOT NULL,
+    adresse VARCHAR2(200),
+    telephone VARCHAR2(15),
+    CONSTRAINT pk_adherent PRIMARY KEY (num_adherent)
+);
+
+CREATE TABLE ecrire (
+    ISBN VARCHAR2(13),
+    code_auteur NUMBER(5),
+    CONSTRAINT pk_ecrire PRIMARY KEY (ISBN, code_auteur),
+    CONSTRAINT fk_ecrire_livre FOREIGN KEY (ISBN)
+        REFERENCES livre(ISBN),
+    CONSTRAINT fk_ecrire_auteur FOREIGN KEY (code_auteur)
+        REFERENCES auteur(code_auteur)
+);
+
+CREATE TABLE emprunter (
+    num_adherent NUMBER(6),
+    ISBN VARCHAR2(13),
+    date_emprunt DATE NOT NULL,
+    date_retour_prevue DATE NOT NULL,
+    date_retour_effective DATE,
+    CONSTRAINT pk_emprunter PRIMARY KEY (num_adherent, ISBN, date_emprunt),
+    CONSTRAINT fk_emp_adherent FOREIGN KEY (num_adherent)
+        REFERENCES adherent(num_adherent),
+    CONSTRAINT fk_emp_livre FOREIGN KEY (ISBN)
+        REFERENCES livre(ISBN),
+    CONSTRAINT ck_dates CHECK (date_retour_prevue > date_emprunt)
+);</pre>
+        </div>
+
+        <hr>
+
+        <div class="header" style="border-top: 3px solid #2c3e50; border-bottom: none; padding-top: 20px; margin-top: 50px;">
+            <h2 style="color: #27ae60; font-size: 32px;">✅ BONNE CHANCE POUR VOTRE EXAMEN ! 🎓</h2>
+            <p style="font-size: 16px; color: #7f8c8d; margin-top: 20px;">
+                Révisez méthodiquement, pratiquez les exercices et vous réussirez !
+            </p>
+        </div>
+
+        <div class="box" style="margin-top: 30px; background: #e8f8f5;">
+            <h3 style="color: #16a085;">📌 Derniers conseils:</h3>
+            <ul style="line-height: 2;">
+                <li>✓ Relisez vos réponses attentivement</li>
+                <li>✓ Vérifiez la syntaxe SQL (virgules, parenthèses)</li>
+                <li>✓ N'oubliez pas les noms de contraintes (bonne pratique)</li>
+                <li>✓ Pensez aux contraintes CHECK pour les validations métier</li>
+                <li>✓ Gérez bien votre temps pendant l'examen</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="controls no-print" style="margin-top: 30px;">
+        <button class="button" onclick="window.print()">📥 Télécharger en PDF</button>
+        <button class="button" onclick="window.print()">🖨️ Imprimer</button>
+    </div>
+
+    <script>
+        // Auto-print option
+        // window.onload = function() { window.print(); }
+    </script>
+</body>
+</html>

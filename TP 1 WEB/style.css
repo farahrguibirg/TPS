@@ -1,0 +1,23 @@
+
+#articles {
+  border: 2px solid black;
+  padding: 10px;
+}
+article.special {
+  background-color: yellow;
+}
+article h3 {
+  color: green;
+}
+a:hover {
+  color: red;
+}
+#articles article:nth-child(even) {
+  background-color: #f2f2f2; 
+}
+#articles article:first-child {
+  border: 3px solid blue;
+}
+p::first-letter {
+  font-weight: bold;
+}

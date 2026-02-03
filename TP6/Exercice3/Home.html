@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Formulaire</title>
+  </head>
+
+  <body>
+    <main id="main2">
+      <form>
+        <div id="nomZone" class="zone">
+          <label for="nom">Nom </label>
+          <input type="text" name="nom" id="nom" value="" />
+          <span>Champ a remplir</span>
+        </div>
+
+        <div id="prenomZone" class="zone">
+          <label for="prenom">Prénom </label>
+          <input type="text" name="prenom" id="prenom" value="" />
+          <span>Champ a remplir</span>
+        </div>
+
+        <div id="teleZone" class="zone">
+          <label for="tele">Téléphone</label>
+          <input type="tel" name="telephone" id="tele" value="" />
+          <span>Champ obligatoire!</span>
+        </div>
+
+        <div id="TelesZones"></div>
+
+        <button id="AjouteTele">Ajouter numéro de téléphone</button>
+        <br /><br />
+        <button id="envoyer">Envoyer</button>
+      </form>
+    </main>
+
+    <script src="ex3.js"></script>
+  </body>
+</html>
