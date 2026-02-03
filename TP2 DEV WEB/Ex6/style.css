@@ -1,0 +1,46 @@
+body {
+            margin: 0;
+            padding: 40px;
+            background-color: white;
+        }
+        .container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        .square {
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border: 25px solid;
+        }
+
+        .red {
+            border-color: #ff0000;
+            top: 50px;
+            left: 30px;
+            z-index: 4;
+        }
+
+        .blue {
+            border-color: #0000ff;
+            top: 110px;
+            left: 90px;
+            z-index: 3;
+        }
+
+        .green {
+            border-color: #008000;
+            top: 50px;
+            left: 90px;
+            z-index: 2;
+        }
+
+        .yellow {
+            border-color: #ffa500;
+            top: 110px;
+            left: 30px;
+            z-index: 1;
+        }

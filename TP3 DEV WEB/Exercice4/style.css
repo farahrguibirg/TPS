@@ -1,0 +1,58 @@
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden
+}
+.images {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px;
+    margin: 0%;
+}
+
+.card {
+    background-color: #92CE0A;
+    width: 200px; 
+    height: 250px;
+    padding: 10px;
+}
+.card:Hover {
+    background-color: #048753;
+
+}
+.card1 { 
+    background-color: #FFE202;
+    width: 200px;
+    height: 250px;
+    padding: 10px;
+
+}
+.card1:Hover {
+    background-color: #048753;
+
+}
+.card2 {
+    background-color: #0052DA;
+    width: 200px;
+    height: 250px;
+    padding: 10px;
+
+}
+.card2:Hover {
+    background-color: #048753;
+
+}
+.card3 {
+    background-color: #FF5241;
+    width: 200px;
+    height: 250px;
+    padding: 10px;
+
+}
+.card3:Hover {
+    background-color: #048753;
+
+}

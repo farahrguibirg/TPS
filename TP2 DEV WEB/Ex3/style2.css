@@ -1,0 +1,25 @@
+body{
+    width: 800px;
+    height: 100vh;
+    margin: 0;
+}
+.liste ul{
+    margin: 10px;
+    background-color: green;
+    width: 800px;
+    height: 10%;
+    list-style-type: none;
+    display: flex;
+    padding: 0%;
+}
+.liste li{
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: white;
+    font-size: 20px;
+    border: 1px solid black;
+    display: flex;
+    padding: 32px;
+    flex: 1;
+}
